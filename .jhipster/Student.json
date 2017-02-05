@@ -1,0 +1,26 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "teacher",
+            "otherEntityName": "teacher",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "schoolYear",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170203192029",
+    "entityTableName": "student",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}
