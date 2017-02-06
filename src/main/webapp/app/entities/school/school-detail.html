@@ -1,20 +1,16 @@
 
 <div>
-    <h2><span>Teacher</span> {{vm.teacher.id}}</h2>
+    <h2><span>School</span> {{vm.school.id}}</h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="row jh-entity-details">
         <dt><span>Name</span></dt>
         <dd>
-            <span>{{vm.teacher.name}}</span>
+            <span>{{vm.school.name}}</span>
         </dd>
-        <dt><span>Subject</span></dt>
+        <dt><span>Capacity</span></dt>
         <dd>
-            <span>{{vm.teacher.subject}}</span>
-        </dd>
-        <dt><span>School</span></dt>
-        <dd>
-            <a ui-sref="school-detail({id:vm.teacher.school.id})">{{vm.teacher.school.id}}</a>
+            <span>{{vm.school.capacity}}</span>
         </dd>
     </dl>
 
@@ -24,7 +20,7 @@
         <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
     </button>
 
-    <button type="button" ui-sref="teacher-detail.edit({id:vm.teacher.id})" class="btn btn-primary">
+    <button type="button" ui-sref="school-detail.edit({id:vm.school.id})" class="btn btn-primary">
         <span class="glyphicon glyphicon-pencil"></span>
         <span class="hidden-sm-down"> Edit</span>
     </button>

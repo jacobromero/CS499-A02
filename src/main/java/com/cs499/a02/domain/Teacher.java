@@ -31,6 +31,9 @@ public class Teacher implements Serializable {
     @JsonIgnore
     private Set<Student> teachers = new HashSet<>();
 
+    @ManyToOne
+    private School school;
+
     public Long getId() {
         return id;
     }
@@ -88,6 +91,19 @@ public class Teacher implements Serializable {
 
     public void setTeachers(Set<Student> students) {
         this.teachers = students;
+    }
+
+    public School getSchool() {
+        return school;
+    }
+
+    public Teacher school(School school) {
+        this.school = school;
+        return this;
+    }
+
+    public void setSchool(School school) {
+        this.school = school;
     }
 
     @Override

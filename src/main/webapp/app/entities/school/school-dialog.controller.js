@@ -3,18 +3,18 @@
 
     angular
         .module('cs499A02App')
-        .controller('StudentDialogController', StudentDialogController);
+        .controller('SchoolDialogController', SchoolDialogController);
 
-    StudentDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Student', 'Teacher', 'School'];
+    SchoolDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'School', 'Student', 'Teacher'];
 
-    function StudentDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Student, Teacher, School) {
+    function SchoolDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, School, Student, Teacher) {
         var vm = this;
 
-        vm.student = entity;
+        vm.school = entity;
         vm.clear = clear;
         vm.save = save;
+        vm.students = Student.query();
         vm.teachers = Teacher.query();
-        vm.schools = School.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();
@@ -26,15 +26,15 @@
 
         function save () {
             vm.isSaving = true;
-            if (vm.student.id !== null) {
-                Student.update(vm.student, onSaveSuccess, onSaveError);
+            if (vm.school.id !== null) {
+                School.update(vm.school, onSaveSuccess, onSaveError);
             } else {
-                Student.save(vm.student, onSaveSuccess, onSaveError);
+                School.save(vm.school, onSaveSuccess, onSaveError);
             }
         }
 
         function onSaveSuccess (result) {
-            $scope.$emit('cs499A02App:studentUpdate', result);
+            $scope.$emit('cs499A02App:schoolUpdate', result);
             $uibModalInstance.close(result);
             vm.isSaving = false;
         }

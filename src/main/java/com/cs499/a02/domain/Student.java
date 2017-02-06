@@ -27,6 +27,9 @@ public class Student implements Serializable {
     @ManyToOne
     private Teacher teacher;
 
+    @ManyToOne
+    private School school;
+
     public Long getId() {
         return id;
     }
@@ -72,6 +75,19 @@ public class Student implements Serializable {
 
     public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
+    }
+
+    public School getSchool() {
+        return school;
+    }
+
+    public Student school(School school) {
+        this.school = school;
+        return this;
+    }
+
+    public void setSchool(School school) {
+        this.school = school;
     }
 
     @Override

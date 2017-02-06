@@ -1,13 +1,13 @@
 <div>
-    <h2>Students</h2>
+    <h2>Schools</h2>
     <jhi-alert></jhi-alert>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="student.new" >
+                <button class="btn btn-primary" ui-sref="school.new" >
                     <span class="glyphicon glyphicon-plus"></span>
                     <span >
-                        Create new Student
+                        Create new School
                     </span>
                 </button>
             </div>
@@ -20,39 +20,31 @@
                 <tr>
                     <th><span>ID</span></th>
                     <th><span>Name</span></th>
-                    <th><span>School Year</span></th>
-                    <th><span>Teacher</span></th>
-                    <th><span>School</span></th>
+                    <th><span>Capacity</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="student in vm.students track by student.id">
-                    <td><a ui-sref="student-detail({id:student.id})">{{student.id}}</a></td>
-                    <td>{{student.name}}</td>
-                    <td>{{student.schoolYear}}</td>
-                    <td>
-                        <a ui-sref="teacher-detail({id:student.teacher.id})">{{student.teacher.id}}</a>
-                    </td>
-                    <td>
-                        <a ui-sref="school-detail({id:student.school.id})">{{student.school.id}}</a>
-                    </td>
+                <tr ng-repeat="school in vm.schools track by school.id">
+                    <td><a ui-sref="school-detail({id:school.id})">{{school.id}}</a></td>
+                    <td>{{school.name}}</td>
+                    <td>{{school.capacity}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"
-                                    ui-sref="student-detail({id:student.id})"
+                                    ui-sref="school-detail({id:school.id})"
                                     class="btn btn-info btn-sm">
                                 <span class="glyphicon glyphicon-eye-open"></span>
                                 <span class="hidden-sm-down"></span>
                             </button>
                             <button type="submit"
-                                    ui-sref="student.edit({id:student.id})"
+                                    ui-sref="school.edit({id:school.id})"
                                     class="btn btn-primary btn-sm">
                                 <span class="glyphicon glyphicon-pencil"></span>
                                 <span class="hidden-sm-down"></span>
                             </button>
                             <button type="submit"
-                                    ui-sref="student.delete({id:student.id})"
+                                    ui-sref="school.delete({id:school.id})"
                                     class="btn btn-danger btn-sm">
                                 <span class="glyphicon glyphicon-remove-circle"></span>
                                 <span class="hidden-sm-down"></span>

@@ -6,6 +6,12 @@
             "relationshipName": "teacher",
             "otherEntityName": "student",
             "otherEntityRelationshipName": "teacher"
+        },
+        {
+            "relationshipName": "school",
+            "otherEntityName": "school",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
         }
     ],
     "fields": [
